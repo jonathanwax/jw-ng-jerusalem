@@ -1,4 +1,4 @@
-<h2>Section title</h2>
+<h2>Section title {{dataItems[0].name}}</h2>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
@@ -11,7 +11,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+        <tr *ngFor="let item of dataItems" 
+        (click)="onSelect(item)" 
+        [class.selected]="item === selectedItem">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>ipsum</td>
+          <td>dolor</td>
+          <td>sit</td>
+        </tr>
+      <!-- <tr>
         <td>1,001</td>
         <td>Lorem</td>
         <td>ipsum</td>
@@ -122,7 +131,7 @@
         <td>ligula</td>
         <td>in</td>
         <td>libero</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>

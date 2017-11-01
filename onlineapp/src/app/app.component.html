@@ -10,7 +10,9 @@
       <h1>Dashboard</h1>
 
       <app-topics></app-topics>
+      {{dataItems[0].name}}
 
-      <app-list></app-list>
+      <!-- <app-list [dataItems]="dataItems"></app-list> -->
+      <router-outlet></router-outlet>
     </main>
   </div>
